@@ -64,7 +64,7 @@ avr_err_t zh_avr_encoder_reset(zh_avr_encoder_handle_t *handle)
 static avr_err_t _zh_avr_encoder_validate_config(const zh_avr_encoder_init_config_t *config)
 {
     ZH_ERROR_CHECK(config != NULL, AVR_ERR_INVALID_ARG);
-    ZH_ERROR_CHECK(config->task_priority > tskIDLE_PRIORITY && config->stack_size >= 124, AVR_ERR_INVALID_ARG);
+    ZH_ERROR_CHECK(config->task_priority > tskIDLE_PRIORITY && config->stack_size >= configMINIMAL_STACK_SIZE, AVR_ERR_INVALID_ARG);
     ZH_ERROR_CHECK(config->queue_size > 0, AVR_ERR_INVALID_ARG);
     ZH_ERROR_CHECK(config->encoder_max_value > config->encoder_min_value, AVR_ERR_INVALID_ARG);
     ZH_ERROR_CHECK(config->encoder_step > 0, AVR_ERR_INVALID_ARG);

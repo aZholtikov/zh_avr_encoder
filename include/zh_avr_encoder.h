@@ -30,7 +30,7 @@ extern "C"
     typedef struct // Structure for initial initialization of encoder.
     {
         uint8_t task_priority;     // Task priority for the encoder isr processing. @note It is not recommended to set a value less than configMAX_PRIORITIES.
-        uint16_t stack_size;       // Stack size for task for the encoder isr processing processing. @note The minimum size is 124 bytes.
+        uint16_t stack_size;       // Stack size for task for the encoder isr processing processing.
         uint8_t queue_size;        // Queue size for task for the encoder processing. Depends on the number of encoders.
         uint8_t gpio_port;         // Encoder GPIO port. @note Must be same for A and B GPIO.
         uint8_t a_gpio_number;     // Encoder A GPIO number.
